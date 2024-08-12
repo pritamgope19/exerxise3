@@ -1,0 +1,27 @@
+
+    
+    name: firstWorkFlow
+
+    on:
+      workflow_dispatch:
+
+    jobs:
+      firstjob:
+        runs-on: self-hosted
+        steps:
+          - name: first_script
+            shell: cmd
+            run: echo Hello World This is first Job
+          - name: checkout
+            uses: actions/checkout@v4.1.7
+             
+          
+      secondjob:
+        runs-on: ubuntu-hosted
+        steps:
+          - name: second_script
+            shell: cmd
+            run:
+              echo Hello World This is second Job
+              echo Hello World This is multiline Job
+              
